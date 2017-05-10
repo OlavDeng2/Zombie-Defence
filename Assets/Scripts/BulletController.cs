@@ -1,35 +1,45 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-public class BulletController : MonoBehaviour {
-	
-	public float maxSpeed = 20f;
-	public float moveForce = 350f;
-	
-	private Rigidbody2D rb2d;
-	
+public class BulletController : MonoBehaviour 
+{
 
+
+	//the speed of the zombie
+	public float Acceleration;
+	public float maxSpeed;
+	
+	//Variable for the rigidbody
+	private Rigidbody2D rigidbody;
 	// Use this for initialization
-	void Awake () 
+	void Start () 
 	{
-		rb2d = GetComponent<Rigidbody2D>();
+		
+		//get the zombie rigid body
+		rigidbody = GetComponent<Rigidbody2D>();
 	}
 	
-	// Update is called once per frame
-	void Update () 
+	// Update is called every fixed frame
+	void FixedUpdate () 
+	{		
+		MoveBullet();
+	}
+	
+	
+	void MoveBullet()
 	{
-		rb2d.AddForce(Vector2.right	* moveForce);
-		if (Mathf.Abs (rb2d.velocity.x) > maxSpeed)
-			rb2d.velocity = new Vector2 (Mathf.Sign (rb2d.velocity.x * maxSpeed), rb2d.velocity.y);
+		//vector for the movement of the zombie
+		Vector2 Movement = new Vector2 (0.0f, Acceleration);
+		
+		//ads the force which provides the movement
+		rigidbody.velocity = Movement;
+		
+		
+		//Limit the max movement speed
+		if(rigidbody.velocity.magnitude > maxSpeed)
+		{
+			rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
+		}
 	}
-	
-	void OnTriggerEnter2D (Collider2D other)
-	{			
-			//Destroy (other.gameObject);
-			Destroy (other.GetComponent<Rigidbody>());
-			Destroy (gameObject);
-			GameController.score += 1;
-	}
-	
-	
 }
