@@ -23,11 +23,11 @@ public class BulletController : MonoBehaviour
 	// Update is called every fixed frame
 	void FixedUpdate () 
 	{		
-		MoveBullet();
+		moveBullet();
 	}
 	
 	
-	void MoveBullet()
+	void moveBullet()
 	{
 		//vector for the movement of the zombie
 		Vector2 Movement = new Vector2 (0.0f, Acceleration);
@@ -42,4 +42,6 @@ public class BulletController : MonoBehaviour
 			rigidbody.velocity = rigidbody.velocity.normalized * maxSpeed;
 		}
 	}
+
+    
 }

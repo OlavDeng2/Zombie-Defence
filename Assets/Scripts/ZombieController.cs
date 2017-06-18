@@ -18,13 +18,16 @@ public class ZombieController : MonoBehaviour
 		
 		//get the zombie rigid body
 		zombieRigidbody = GetComponent<Rigidbody2D>();
+
+
 	}
 	
 	// Update is called every fixed frame
 	void FixedUpdate () 
 	{		
 		MoveZombie();
-	}
+    }
+
 	
 	
 	void MoveZombie()
@@ -41,4 +44,25 @@ public class ZombieController : MonoBehaviour
 			zombieRigidbody.velocity = zombieRigidbody.velocity.normalized * maxSpeed;
 		}	
 	}
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.tag == "Player")
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.tag == "WorldBorder")
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
