@@ -38,4 +38,13 @@ public class PlayerController : MonoBehaviour {
 		
 	}
 
+    private void OnTriggerEnter2D (Collider2D collision)
+    {
+        if (collision.gameObject.tag == "WorldBorder")
+        {
+            //playerRigidbody.velocity = Vector2.zero;
+            //playerRigidbody.position = new Vector2(0, playerRigidbody.position.y);
+        }
+    }
+
 }

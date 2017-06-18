@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class ZombieController : MonoBehaviour 
 {
@@ -9,6 +11,8 @@ public class ZombieController : MonoBehaviour
 	//the speed of the zombie
 	public float movementSpeed;
 	public float maxSpeed;
+
+    public int scene;
 	
 	//Variable for the rigidbody of the zombie
 	private Rigidbody2D zombieRigidbody;
@@ -55,15 +59,22 @@ public class ZombieController : MonoBehaviour
             GameController.score += 1; 
         }
 
-        if (collision.gameObject.tag == "Player")
-        {
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-        }
+
 
         if (collision.gameObject.tag == "WorldBorder")
         {
             Destroy(this.gameObject);
+            GameController.zombiesComePast += 1;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+            SceneManager.LoadScene(scene);
         }
     }
 }

@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour {
 	public Camera cam;
 	public GameObject enemy;
     public static int score = 0;
+    public static int zombiesComePast = 0;
 
 	
 	private float maxWidth;
