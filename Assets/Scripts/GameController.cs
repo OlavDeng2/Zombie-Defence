@@ -19,10 +19,11 @@ public class GameController : MonoBehaviour {
 	//use this for initialization
 	void Start ()
 	{
-	
-		
-	
-		if (cam == null)
+
+        zombiesComePast = 0;
+
+
+        if (cam == null)
 			cam = Camera.main;
 			
 		Vector3 upperCorner = new Vector3 (Screen.width, Screen.height, 0.0f);
