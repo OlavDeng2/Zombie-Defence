@@ -41,11 +41,16 @@ MonoBehaviour:
     x: 0
     y: 30
     width: 1920
+<<<<<<< HEAD
     height: 947
   m_MinSize: {x: 683, y: 492}
+=======
+    height: 930
+  m_MinSize: {x: 681, y: 492}
+>>>>>>> OlavWork
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 49
+  controlID: 37
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -89,9 +94,15 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 571
+<<<<<<< HEAD
     height: 571
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
+=======
+    height: 561
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> OlavWork
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -145,8 +156,13 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1920
+<<<<<<< HEAD
     height: 997
   m_MinSize: {x: 950, y: 300}
+=======
+    height: 980
+  m_MinSize: {x: 950, y: 542}
+>>>>>>> OlavWork
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -208,11 +224,16 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1531
+<<<<<<< HEAD
     height: 947
   m_MinSize: {x: 406, y: 492}
+=======
+    height: 930
+  m_MinSize: {x: 404, y: 492}
+>>>>>>> OlavWork
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 50
+  controlID: 38
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -232,11 +253,17 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1531
+<<<<<<< HEAD
     height: 571
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
+=======
+    height: 561
+  m_MinSize: {x: 404, y: 221}
+  m_MaxSize: {x: 8004, y: 4021}
+>>>>>>> OlavWork
   vertical: 0
-  controlID: 51
+  controlID: 39
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -257,13 +284,13 @@ MonoBehaviour:
     height: 571
   m_MinSize: {x: 204, y: 221}
   m_MaxSize: {x: 4004, y: 4021}
-  m_ActualView: {fileID: 19}
+  m_ActualView: {fileID: 20}
   m_Panes:
   - {fileID: 19}
   - {fileID: 20}
   - {fileID: 15}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -439,9 +466,15 @@ MonoBehaviour:
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
     m_SelectedIDs: 08250000
     m_LastClickedID: 9480
     m_ExpandedIDs: 00000000ca2400000c25000000ca9a3bffffff7f
+=======
+    m_SelectedIDs: 48250000
+    m_LastClickedID: 9544
+    m_ExpandedIDs: 000000000e2500004c25000000ca9a3bffffff7f
+>>>>>>> OlavWork
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -469,7 +502,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000ca2400000c250000
+=======
+    m_ExpandedIDs: 000000000e2500004c250000
+>>>>>>> OlavWork
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -585,28 +622,39 @@ MonoBehaviour:
     height: 550
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
+    m_SelectedIDs: a6250000
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: d02bfbff463dfbff223efbff9c3efbff4446fbff9a48fbffcc54fbffe455fbff465bfbff585bfbffe85bfbfff45cfbff6c5dfbffa0f0fcffdaf1fcff46f2fcffb2f2fcff1ef3fcffd4f3fcff52f4fcffd6fbffff00000000ae250000de250000e22500005c320000883200007a3f00005a40000064400000f045000090490000c2490000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: SceneManager
       m_OriginalName: SceneManager
+=======
+    m_ExpandedIDs: caf9ffff48faffffa4fbffff00000000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+>>>>>>> OlavWork
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
+<<<<<<< HEAD
       m_UserData: 18894
+=======
+      m_UserData: 0
+>>>>>>> OlavWork
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 4}
     m_SearchString: 
-  m_ExpandedScenes:
-  - Game
+  m_ExpandedScenes: []
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
