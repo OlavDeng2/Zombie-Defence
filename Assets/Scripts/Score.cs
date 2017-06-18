@@ -6,9 +6,10 @@ public class Score : MonoBehaviour {
 	
 	public Text scoreText;
 
-	void UpdateText()
+
+    void UpdateText()
 	{
-		scoreText.text = "You Converted " + GameController.score + " peasants";
+		scoreText.text = "You killed " + GameController.score + " Zombies \n" + GameController.zombiesComePast + " zombies have come past";
 	}
 	
 	void Update()

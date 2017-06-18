@@ -35,15 +35,16 @@ public class PlayerController : MonoBehaviour {
 			playerRigidbody.velocity = playerRigidbody.velocity.normalized * maxSpeed;
 		}
 		
-		if (Input.GetKeyDown("space"))
-		{
-			FireCannon();
-		}
 		
 	}
-	
-	void FireCannon()
-	{
-		Instantiate(bullet, new Vector2(transform.position.x, transform.position.y), transform.rotation);
-	}
+
+    private void OnTriggerEnter2D (Collider2D collision)
+    {
+        if (collision.gameObject.tag == "WorldBorder")
+        {
+            //playerRigidbody.velocity = Vector2.zero;
+            //playerRigidbody.position = new Vector2(0, playerRigidbody.position.y);
+        }
+    }
+
 }

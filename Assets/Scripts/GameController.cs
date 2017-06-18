@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class GameController : MonoBehaviour {
 	public Camera cam;
 	public GameObject enemy;
-	
-	public Text scoreText;
-	public static int score = 0;
-	
-	private float maxWidth;
+    public static int score = 0;
+    public static int zombiesComePast = 0;
+    public static int maxZombiesPassed = 3;
+    public int scene;
+
+
+
+    private float maxWidth;
 	
 	//use this for initialization
 	void Start ()
@@ -28,23 +33,21 @@ public class GameController : MonoBehaviour {
 		StartCoroutine (Spawn());
 		
 	}
-	
-	void UpdateText()
-	{
-		scoreText.text = "Zombies Killed: " + score;
-	}
-	
-	void Update()
-	{
-		UpdateText();
-	}
 
-	
-	IEnumerator Spawn ()
+    private void Update()
+    {
+        if(zombiesComePast >= maxZombiesPassed)
+        {
+            SceneManager.LoadScene(scene);
+        }
+    }
+
+
+    IEnumerator Spawn ()
 	{
 		while (true)
 		{
-			Vector2 spawnPosition = new Vector2 (Random.Range(-maxWidth, maxWidth), Screen.height );
+			Vector2 spawnPosition = new Vector2 (Random.Range(-maxWidth, maxWidth), transform.position.y + 10);
 		
 			Quaternion spawnRotation = Quaternion.identity;
 		

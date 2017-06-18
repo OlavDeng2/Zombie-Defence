@@ -8,25 +8,30 @@ public class Weapon : MonoBehaviour {
 	public GameObject bullet;
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
 		
 		if (reloadTime > 1.5f)
 		{
 			canShoot = true;
-			reloadTime = 0.0f;
+			
 			
 		}
 		
-		if (Input.GetKeyDown("space")&&canShoot== true)
-		{
-			Instantiate (bullet, transform.position, Quaternion.identity);
-			canShoot = false;
-		}
+
 			
 		reloadTime += Time.deltaTime;
 		
 
 	}
+    void Update()
+    {
+        if (Input.GetKeyDown("space") && canShoot == true)
+        {
+            Instantiate(bullet, transform.position, Quaternion.identity);
+            canShoot = false;
+            reloadTime = 0.0f;
+        }
+    }
 	
 }
