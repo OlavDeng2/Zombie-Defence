@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour {
 	public Text scoreText;
 	public static int score = 0;
 	
-	private float maxHeight;
+	private float maxWidth;
 	
 	//use this for initialization
 	void Start ()
@@ -21,9 +21,9 @@ public class GameController : MonoBehaviour {
 			cam = Camera.main;
 			
 		Vector3 upperCorner = new Vector3 (Screen.width, Screen.height, 0.0f);
-		Vector3 targetHeight = cam.ScreenToWorldPoint(upperCorner);
-		float enemyHeight = enemy.GetComponent<Renderer>().bounds.extents.y;
-		maxHeight = targetHeight.y - enemyHeight;
+		Vector3 targetWidth = cam.ScreenToWorldPoint(upperCorner);
+		float enemyWidth = enemy.GetComponent<Renderer>().bounds.extents.x;
+		maxWidth = targetWidth.x - enemyWidth;
 		
 		StartCoroutine (Spawn());
 		
@@ -31,7 +31,7 @@ public class GameController : MonoBehaviour {
 	
 	void UpdateText()
 	{
-		scoreText.text = "Peasants Converted: " + score;
+		scoreText.text = "Zombies Killed: " + score;
 	}
 	
 	void Update()
@@ -44,7 +44,7 @@ public class GameController : MonoBehaviour {
 	{
 		while (true)
 		{
-			Vector3 spawnPosition = new Vector3 (transform.position.x, Random.Range(312.0f, maxHeight), 0.0f);
+			Vector2 spawnPosition = new Vector2 (Random.Range(-maxWidth, maxWidth), Screen.height );
 		
 			Quaternion spawnRotation = Quaternion.identity;
 		
