@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class GameController : MonoBehaviour {
 	public Camera cam;
 	public GameObject enemy;
     public static int score = 0;
     public static int zombiesComePast = 0;
+    public static int maxZombiesPassed = 3;
+    public int scene;
 
-	
-	private float maxWidth;
+
+
+    private float maxWidth;
 	
 	//use this for initialization
 	void Start ()
@@ -28,9 +33,17 @@ public class GameController : MonoBehaviour {
 		StartCoroutine (Spawn());
 		
 	}
-	
-	
-	IEnumerator Spawn ()
+
+    private void Update()
+    {
+        if(zombiesComePast >= maxZombiesPassed)
+        {
+            SceneManager.LoadScene(scene);
+        }
+    }
+
+
+    IEnumerator Spawn ()
 	{
 		while (true)
 		{
