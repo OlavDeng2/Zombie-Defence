@@ -28,8 +28,7 @@ public class ZombieController : MonoBehaviour
 		MoveZombie();
     }
 
-	
-	
+
 	void MoveZombie()
 	{
 		//vector for the movement of the zombie
@@ -52,6 +51,8 @@ public class ZombieController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(this.gameObject);
+
+            GameController.score += 1; 
         }
 
         if (collision.gameObject.tag == "Player")

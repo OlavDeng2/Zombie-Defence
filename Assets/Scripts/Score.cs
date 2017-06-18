@@ -8,7 +8,7 @@ public class Score : MonoBehaviour {
 
 	void UpdateText()
 	{
-		scoreText.text = "You Converted " + GameController.score + " peasants";
+		scoreText.text = "You killed " + GameController.score + " Zombies";
 	}
 	
 	void Update()

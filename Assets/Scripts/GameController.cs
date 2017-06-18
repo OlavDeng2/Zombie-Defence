@@ -5,9 +5,8 @@ using UnityEngine.UI;
 public class GameController : MonoBehaviour {
 	public Camera cam;
 	public GameObject enemy;
-	
-	public Text scoreText;
-	public static int score = 0;
+    public static int score = 0;
+
 	
 	private float maxWidth;
 	
@@ -29,16 +28,6 @@ public class GameController : MonoBehaviour {
 		
 	}
 	
-	void UpdateText()
-	{
-		scoreText.text = "Zombies Killed: " + score;
-	}
-	
-	void Update()
-	{
-		UpdateText();
-	}
-
 	
 	IEnumerator Spawn ()
 	{
