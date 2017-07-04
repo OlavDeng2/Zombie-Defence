@@ -11,6 +11,7 @@ $RECYCLE.BIN/
 #Unity Folder
 Temp/
 Library/
+Finished/
 
 # Windows Installer files
 *.cab
