@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
 	public Camera cam;
 	public GameObject enemy;
-    public static int score = 0;
-    public static int zombiesComePast = 0;
+    public static int score;
+    public static int zombiesComePast;
     public static int maxZombiesPassed = 3;
     public int scene;
 
@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour {
 	{
 
         zombiesComePast = 0;
+		score = 0;
 
 
         if (cam == null)
