@@ -12,14 +12,11 @@ public class GameController : MonoBehaviour {
     public static int maxZombiesPassed = 3;
     public int scene;
 
-
-
     private float maxWidth;
 	
 	//use this for initialization
 	void Start ()
 	{
-
         zombiesComePast = 0;
 		score = 0;
 
