@@ -70,11 +70,10 @@ public class ZombieController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //end the game if zombie hits the player.
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
-            SceneManager.LoadScene(scene);
+            GameObject.Find("GameController").GetComponent<GameController>().GameOver();
         }
     }
 }

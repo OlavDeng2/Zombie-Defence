@@ -12,4 +12,9 @@ public class LoadOnClick : MonoBehaviour {
 		//loadingImage.SetActive(true);
 		SceneManager.LoadScene(Scene);
 	}
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
