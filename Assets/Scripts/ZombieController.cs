@@ -12,8 +12,14 @@ public class ZombieController : MonoBehaviour
 	public float movementSpeed;
 	public float maxSpeed;
 
+    public AudioClip zombieDeathRattle;
+    private AudioSource zombieAudioSource;
+
+
     public int scene;
-	
+
+    bool wasKilled = false;
+
 	//Variable for the rigidbody of the zombie
 	private Rigidbody2D zombieRigidbody;
 	// Use this for initialization
@@ -22,7 +28,8 @@ public class ZombieController : MonoBehaviour
 		
 		//get the zombie rigid body
 		zombieRigidbody = GetComponent<Rigidbody2D>();
-
+        zombieAudioSource = GetComponent<AudioSource>();
+        zombieAudioSource.clip = zombieDeathRattle;
 
 	}
 	
@@ -53,15 +60,19 @@ public class ZombieController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Bullet")
         {
-            Destroy(collision.gameObject);
-            Destroy(this.gameObject);
+            wasKilled = true;
 
-            GameController.score += 1; 
+            zombieAudioSource.Play();
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject, 2);
+
+            GameController.score += 1;
+
         }
 
 
 
-        if (collision.gameObject.tag == "WorldBorder")
+        if (collision.gameObject.tag == "WorldBorder" && !wasKilled)
         {
             Destroy(this.gameObject);
             GameController.zombiesComePast += 1;
@@ -71,7 +82,7 @@ public class ZombieController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //end the game if zombie hits the player.
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && !wasKilled)
         {
             GameObject.Find("GameController").GetComponent<GameController>().GameOver();
         }
